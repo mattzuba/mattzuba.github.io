@@ -1,0 +1,16 @@
+# Authors
+
+mattzuba:
+  name: Matt Zuba
+  picture: https://secure.gravatar.com/avatar/936a6cebcbdcf8f9c58534154316b4a3?size=120
+  twitter: cloudninjamatt
+  links:
+    - title: Twitter
+      url: https://twitter.com/cloudninjamatt
+      icon: fab fa-twitter-square
+    - title: Instagram
+      url: https://instagram.com/cloudninjamatt
+      icon: fab fa-instagram
+    - title: GitHub
+      url: https://github.com/mattzuba
+      icon: fab fa-github-square
