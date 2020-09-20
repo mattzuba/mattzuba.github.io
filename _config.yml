@@ -32,7 +32,7 @@ google_fonts:
     weights: "400,400i,700,700i"
   - name: "Lora"
     weights: "400,400i,700,700i"
-google_analytics:
+google_analytics: "UA-21760903-5"
 disqus:
   shortname: "mattzuba-gh"
 twitter:

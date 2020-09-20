@@ -1,0 +1,20 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+sitemap: false
+---
+
+@charset "utf-8";
+
+@import "so-simple";
+
+.file-name{
+  margin: 0;
+  padding: .7em 0 .5em 1em;
+  background-color: #292929;
+  color: lightgrey;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  border-left: 0;
+  font-size: 14px;
+}
