@@ -24,26 +24,14 @@ Later on in the evening, I received the initial design.  The design document sen
 
 I did some digging into [APS's rules around solar](https://www.aps.com/en/Residential/Service-Plans/Compare-Service-Plans/Renewable-Energy-Riders#RCPExportRider) and found that there are two restrictions in play for my property: I have a 200 amp main breaker so I'm capped at a 15 kW system; and since I'm looking at a system greater than 10 kW, I'm capped at 1.5x my highest 1 hour demand in the last 12 months.  Up until my latest bill, my largest billed demand was 8 kW, therefore capping me at a 12 kW system.  
 
-Fortunately, my latest bill that was about to be sent out had a demand of 8.36 kW, capping me at 12.54 kW system, allowing me to go with the full 36 panels.  I emailed Ariana and asked if this demand could be used instead before signing off on the design and waited to hear back.
+Fortunately, my latest bill that was about to be sent out had a demand of 8.36 kW, capping me at 12.54 kW system, allowing me to go with the full 36 panels.  A few days later my billing cycle was up and I sent the newest bill with demand to Ariana so they could redesign with the full 36 panels.
 
-### Monday, September 7th, 2020
+### Tuesday, September 29th, 2020
 
-Ariana emailed back and let me know that they could only use the amount once it was billed out.  I let her know that the bill should be out by the week's end and I would forward it a long to her once I got it.
+Got an email from Ariana and a notice from Tesla that new documents were available for me to review; including the revised design with all 36 panels, some APS documents to sign and a few other things.  I signed all of the documents and then downloaded a copy of the design to submit to my HOA's architectural committee.
 
-### Wednesday, September 9th, 2020
+The design ended up with 14 panels (4.76 kW) on the east face of the roof and 22 panels (7.48 kW) on the west.  [PVWatts](https://pvwatts.nrel.gov/pvwatts.php) estimates this will output 7700 kWh/year and 12073 kWh/year, respectively, for a total of 19773 kWh/year.  Not far off from the first year estimate from Tesla of 18910 kWh.
 
-APS billed out and the new 12-month high demand charge was on it.  I downloaded the PDF and sent it off to Ariana.
+### Thursday, October 1st, 2020
 
-### Thursday, September 10th, 2020
-
-Ariana emailed back and asked to upload some detailed usage details from my APS account so they could see if this was indeed my highest or (I assume) if there was anything higher that might allow them to go with a slightly larger system.  I downloaded the usage and emailed it back to her.  She confirmed they could do 36 panels and submitted a request for a redesign.
-
-### Tuesday, September 15th, 2020
-
-I reached out to follow up with Ariana to check on the status of the redesign.  She had previously mentioend that we were up against a September 30th deadline to submit the application to take advantage of APS's current export rate (currently $0.1045/kWh).
-
-Ariana replied back that the design team is running 1-2 weeks out due to a backlog.  She also asked for an additional photo of my pool subpanel which I replied with.
-
-### Wednesday, September 16th, 2020
-
-Ariana confirmed receipt of the images and that she had uploaded them for the design team.
+I received approval from the HOA for the Solar project.
