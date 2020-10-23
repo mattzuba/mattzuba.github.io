@@ -38,6 +38,6 @@ I received approval from the HOA for the Solar project.
 
 ### Tuesday, October 20th, 2020
 
-Tesla completed the electrical plans and determined they would be able to accomodate whole-home backup with the two Powerwall batteries based on the loads in my electrical panel!  I was sent the plans to review (which is awesome, because I like learning how this stuff works) and I received an email from APS seeking authorization for Tesla to submit applications on my behalf.  I signed the paperwork (Docusign) and let my rep know they were good to move forward on their end.
+Tesla completed the electrical plans and determined they would be able to accommodate whole-home backup with the two Powerwall batteries based on the loads in my electrical panel!  I was sent the plans to review (which is awesome, because I like learning how this stuff works) and I received an email from APS seeking authorization for Tesla to submit applications on my behalf.  I signed the paperwork (Docusign) and let my rep know they were good to move forward on their end.
 
 Two days later, I received a notice from APS that an interconnection application had been submitted.
