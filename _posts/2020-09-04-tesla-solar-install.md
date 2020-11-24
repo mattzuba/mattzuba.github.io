@@ -43,3 +43,11 @@ Tesla completed the electrical plans and determined they would be able to accomm
 Two days later, I received a notice from APS that an interconnection application had been submitted.
 
 In reviewing the design document, I was pleasantly surprised to see that Tesla was including [SolarEdge Power Optimizers](https://www.solaredge.com/us/products/power-optimizer) in the design as well.  These weren't on the initial plans but I'm happy to see them included here.
+
+### Tuesday, October 27th, 2020
+
+After a few days of back and forth between Tesla and APS, APS has approved the installation plans.
+
+### Monday, November 9th, 2020
+
+I've been assigned a new Project Advisor, Alessandra, as Ariana has moved to a new role in Tesla Auto.  Ariana also let me know they're expecting city permits to be issued sometime around Thanksgiving week.
