@@ -51,3 +51,9 @@ After a few days of back and forth between Tesla and APS, APS has approved the i
 ### Monday, November 9th, 2020
 
 I've been assigned a new Project Advisor, Alessandra, as Ariana has moved to a new role in Tesla Auto.  Ariana also let me know they're expecting city permits to be issued sometime around Thanksgiving week.
+
+### Monday, December 7th, 2020
+
+Permits were issued by the city and installation has been scheduled for January 25th.  I'm now following up with Tesla on what happens with the 4% decrease in the Federal ITC.  In early November, there was a notice on Tesla's site indicating that Tesla would provide a rebate of 4% to cover the decrease if they couldn't schedule installation prior to the end of the year provided all documents were in prior to December 1st.
+
+<p align="center"><img src="/images/tesla-itc.jpg" width="50%" alt="Tesla ITC Notice" /></p>
