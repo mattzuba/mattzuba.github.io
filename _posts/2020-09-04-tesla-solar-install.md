@@ -1,6 +1,7 @@
 ---
 title: Installing Solar Through Tesla
 image: /images/tesla-hero.jpg
+description: A journey through the installation of Tesla Solar.
 ---
 
 We've wanted solar for at least the past 5 years.  We even went so far as to get quotes 5 years ago and then decided against it when we didn't feel we were going to be able to secure as good a deal as we were hoping we could get.  We weighed options of financing and leasing and nothing seemed right for the long term.  We're refinancing our house, and we had built up plenty of equity so at this point solar seemed like a great idea with prices as they are.
