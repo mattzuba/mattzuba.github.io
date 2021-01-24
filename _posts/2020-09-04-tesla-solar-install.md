@@ -2,15 +2,15 @@
 title: Installing Solar Through Tesla
 ---
 
-We've wanted solar for at least the past 5 years.  We even went so far as to get quotes 5 years ago and then decided against it when we didn't feel we were going to be able to secure as good a deal as we were hoping we could get.  We weighed options of financing and leasing and nothing seemed right for the long term.  We're refinancing our house, and we had built up plenty of equity so at this point solar seemed like a great idea.
+We've wanted solar for at least the past 5 years.  We even went so far as to get quotes 5 years ago and then decided against it when we didn't feel we were going to be able to secure as good a deal as we were hoping we could get.  We weighed options of financing and leasing and nothing seemed right for the long term.  We're refinancing our house, and we had built up plenty of equity so at this point solar seemed like a great idea with prices as they are.
 
-When we previously looked at solar, the best deal at the time we were able to find was a 12.48 kW system from SunRun that would be leased over the course of 20 years.  The total cost after all was said and done was going to be $48k.  I could prepay the lease for $31k, or buy it outright for $52k.  This did not include any batteries, it was a solar array only.
+When we previously looked at solar, the best deal at the time we were able to find was a 12.48 kW system from SunRun that would be leased over the course of 20 years.  The total cost after all was said and done was going to be $48k.  I could prepay the lease for $31k, or buy it outright for $52k (before credits).  This did not include any batteries, it was a solar array only.
 
-Contrast that to the option I've recently selected with Tesla.  Now granted, prices have gone down a small bit for solar, however using a cash-out refi to pay for solar if you have a damn good interest rate is the optimal way to get the most bang for your buck.  I opted to go with Tesla's 12.24 kW system with 2 Powerwall batteries.  Using the cash payment option and getting the federal tax credits brings the net cost down to just about $29K.  Estimated finance charges by rolling it into the mortgage is about $13k for a total cost of $42k.  Over the course of 20 years, that comes out to about $175/month, at least $50/month cheaper than my current average electric bill.  That savings will only grow over time!
+Contrast that to the option I've recently selected with Tesla.  Now granted, prices have gone down a small bit for solar, however using our cash-out refi to pay for solar was the optimal way to get the most bang for our buck.  I opted to go with Tesla's 12.24 kW system with 2 Powerwall batteries.  Using the cash payment option and getting the tax credits brings the net cost down to just about $29K.  Estimated finance charges by rolling it into the mortgage is about $13k for a total cost of $42k.  Over the course of 20 years, that comes out to about $175/month, at least $50/month cheaper than my current average electric bill.  That savings will only grow over time!
 
 ### Thursday, September 3rd, 2020
 
-It was easy to get started with Tesla.  All you have to do is [visit their website](https://www.tesla.com/energy/design?referral=matt16062) (referral link; you'll get $100 back after system activation), fill out your address and average monthly electric bill and then you can configure your system and payment options.  Tesla selects the system they think is most optimal based on your electric bill.  In my case it was the 12.24 kW system.  I added the Powerwall option as well.  It defaulted to three; I updated it to two.
+It was easy to get started with Tesla.  All you have to do is [visit their website](https://www.tesla.com/energy/design?referral=matt16062) (referral link; you'll get $100 back after system activation), fill out your address and average monthly electric bill and then you can configure your system and payment options.  Tesla selects the system they think is most optimal based on your electric bill.  In my case it was the 12.24 kW system.  I added the Powerwall option as well.  It defaulted to three; I decreased it to two.  Of course the system size Tesla selects for you is an estimate.  Since you don't have that door-to-door salesman coming up and explaining everything, you'll need to do some research and determine what system size will end up working best for your needs and be most cost effective for you.
 
 I entered my contact information and credit card info ($100 non-refundable deposit) and placed my order.
 
@@ -24,7 +24,7 @@ Later on in the evening, I received the initial design.  The design document sen
 
 I did some digging into [APS's rules around solar](https://www.aps.com/en/Residential/Service-Plans/Compare-Service-Plans/Renewable-Energy-Riders#RCPExportRider) and found that there are two restrictions in play for my property: I have a 200 amp main breaker so I'm capped at a 15 kW system; and since I'm looking at a system greater than 10 kW, I'm capped at 1.5x my highest 1 hour demand in the last 12 months.  Up until my latest bill, my largest billed demand was 8 kW, therefore capping me at a 12 kW system.  
 
-Fortunately, my latest bill that was about to be sent out had a demand of 8.36 kW, capping me at 12.54 kW system, allowing me to go with the full 36 panels.  A few days later my billing cycle was up and I sent the newest bill with demand to Ariana so they could redesign with the full 36 panels.
+Fortunately, my latest bill that was about to be sent out had a demand of 8.36 kW, capping me at 12.54 kW system, thus allowing me to go with the full 36 panels.  A few days later my billing cycle was up and I sent the newest bill with demand to Ariana so they could redesign with the full 36 panels.
 
 ### Tuesday, September 29th, 2020
 
@@ -61,3 +61,7 @@ Permits were issued by the city and installation has been scheduled for January 
 ### Sunday, December 27th, 2020
 
 The above issue regarding the tax credit is now moot.  Included in the [Consolidated Appropriations Act, 2021](https://www.congress.gov/bill/116th-congress/house-bill/133) passed by congress and signed into law by President Trump today is a provision to extend the Solar Investment Tax Credit at 26% through December 31, 2022.  Now we simply await the installation!
+
+### Saturday, January 23rd, 2021
+
+I got a call from Tesla Solar Scheduling yesterday and they asked if they could start the install today and finish on Monday.  The weather isn't looking so good for Monday but there was a bit of a reprieve today so they wanted to get the panels up on the roof.  The installation team arrived bright and early at 7:15a to begin their work.  They were pretty quick and got 26 of the 36 panels racked up on the roof.  The other 10 (not enough power optimizers on hand), the electrical and the Powerwalls will wait until Monday morning.
