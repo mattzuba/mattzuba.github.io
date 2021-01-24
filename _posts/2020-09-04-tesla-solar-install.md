@@ -64,6 +64,6 @@ Permits were issued by the city and installation has been scheduled for January 
 
 The above issue regarding the tax credit is now moot.  Included in the [Consolidated Appropriations Act, 2021](https://www.congress.gov/bill/116th-congress/house-bill/133) passed by congress and signed into law by President Trump today is a provision to extend the Solar Investment Tax Credit at 26% through December 31, 2022.  Now we simply await the installation!
 
-### Saturday, January 23rd, 2021
+### Saturday, January 23rd, 2021 - INSTALLATION BEGINS!!!
 
 I got a call from Tesla Solar Scheduling yesterday and they asked if they could start the install today and finish on Monday.  The weather isn't looking so good for Monday but there was a bit of a reprieve today so they wanted to get the panels up on the roof.  The installation team arrived bright and early at 7:15a to begin their work.  They were pretty quick and got 26 of the 36 panels racked up on the roof.  The other 10 (not enough power optimizers on hand), the electrical and the Powerwalls will wait until Monday morning.
