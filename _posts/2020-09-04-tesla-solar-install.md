@@ -8,7 +8,7 @@ We've wanted solar for at least the past 5 years.  We even went so far as to get
 
 When we previously looked at solar, the best deal at the time we were able to find was a 12.48 kW system from SunRun that would be leased over the course of 20 years.  The total cost after all was said and done was going to be $48k.  I could prepay the lease for $31k, or buy it outright for $52k (before credits).  This did not include any batteries, it was a solar array only.
 
-Contrast that to the option I've recently selected with Tesla.  Now granted, prices have gone down a small bit for solar, however using our cash-out refi to pay for solar was the optimal way to get the most bang for our buck.  I opted to go with Tesla's 12.24 kW system with 2 Powerwall batteries.  Using the cash payment option and getting the tax credits brings the net cost down to just about $29K.  Estimated finance charges by rolling it into the mortgage is about $13k for a total cost of $42k.  Over the course of 20 years, that comes out to about $175/month, at least $50/month cheaper than my current average electric bill.  That savings will only grow over time!
+Contrast that to the option I've recently selected with Tesla.  Now granted, prices have gone down a small bit for solar, however using our cash-out refi to pay for solar was the optimal way to get the most bang for our buck.  I opted to go with Tesla's 12.24 kW system with 2 Powerwall batteries.  Using the cash payment option and getting the tax credits brings the net cost down to just about $27K.  Estimated finance charges by rolling it into the mortgage is about $12k for a total cost of about $39k.  Over the course of 20 years, that comes out to about $160/month, at least $75/month cheaper than my current average electric bill.  That savings will only grow over time!
 
 ### Thursday, September 3rd, 2020
 
@@ -62,8 +62,26 @@ Permits were issued by the city and installation has been scheduled for January 
 
 ### Sunday, December 27th, 2020
 
-The above issue regarding the tax credit is now moot.  Included in the [Consolidated Appropriations Act, 2021](https://www.congress.gov/bill/116th-congress/house-bill/133) passed by congress and signed into law by President Trump today is a provision to extend the Solar Investment Tax Credit at 26% through December 31, 2022.  Now we simply await the installation!
+The above issue regarding the tax credit is now moot.  Included in the [Consolidated Appropriations Act, 2021](https://www.congress.gov/bill/116th-congress/house-bill/133) passed by Congress and signed into law by President Trump today is a provision to extend the Solar Investment Tax Credit at 26% through December 31, 2022.  Now we simply await the installation!
 
 ### Saturday, January 23rd, 2021 - INSTALLATION BEGINS!!!
 
-I got a call from Tesla Solar Scheduling yesterday and they asked if they could start the install today and finish on Monday.  The weather isn't looking so good for Monday but there was a bit of a reprieve today so they wanted to get the panels up on the roof.  The installation team arrived bright and early at 7:15a to begin their work.  They were pretty quick and got 26 of the 36 panels racked up on the roof.  The other 10 (not enough power optimizers on hand), the electrical and the Powerwalls will wait until Monday morning.
+I got a call from Tesla Solar Scheduling yesterday, and they asked if they could start the installation today and finish on Monday.  The weather isn't looking so good for Monday but there was a bit of a reprieve today, so they wanted to get the panels up on the roof.  The installation team arrived bright and early at 7:15a to begin their work.  They were pretty quick and got 26 of the 36 panels racked up on the roof.  The other 10 (not enough power optimizers on hand), the electrical and the Powerwalls will wait until Monday morning.
+
+### Monday, January 25th, 2021
+
+Day 2 of the installation.  It was pretty wet outside and there was only a short 2-3 hours when rain wasn't expected, so the Powerwall crew was called off for the day.  The Solar crew was able to finish a majority of their work except for testing and painting the conduit on the roof.
+
+### Saturday, January 30th, 2021
+
+Day 3 of installation.  No rain, a mostly cloud-less day, and perfect for finishing the installation of the system.  
+
+The Powerwall crew arrived right on time at 7a and got to work.  They cut power to the house at 7:50 which gave me time to shut down computers and network equipment.  To my surprise, these guys moved quick; power was restored by 10am!  They continued their work for about another two hours, completing the wiring of the Powerwall batteries and getting the Tesla Energy Gateway (TEG) wired up.  They completed their work shortly before noon and with some capacity in each battery already, did a test of killing grid power and letting the batteries take over.  As expected, the lights flickered briefly as the Powerwall batteries took over.  My face lit up!
+
+Just as the Powerwall crew was finishing up, the Solar crew returned to complete their work; painting conduit, connecting solar to the TEG and then performing their test to ensure all panels were recognized by the inverter and that power was flowing to the house and grid.
+
+<p align="center"><img src="/images/tesla-solar-install-complete.jpg" width="50%" alt="Complete Install" /></p>
+
+### Thursday, February 4, 2021
+
+Tesla texted yesterday to schedule the city inspection and as luck would have it, there was an opening for today.  The inspector arrived at 9:30 and green-tagged the installation!  Now to wait for the APS inspection and Permission To Operate (PTO).
