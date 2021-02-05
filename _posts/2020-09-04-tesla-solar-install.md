@@ -90,6 +90,8 @@ Just as the Powerwall crew was finishing up, the Solar crew returned to complete
 
 A side note on the Solar and Powerwall teams - these guys were fantastic.  They were helpful in answering questions I had about their processes, polite in their interactions, considerate of our house/property, explained things very well and overall I felt they did an outstanding job!  In talking with a few of them, some of them came from the Solar City merger, others have been installing Solar for quite some time, and they were all very knowledgeable about what they were doing.  It gave me great confidence that everything was being done correctly and that I would end up with a well functioning system.  I felt bad that they had to work in the cold/rain the first two days and supplied them with a portable gas heater in my garage for them to stay warm and made sure to give them my appreciation for their work ethic and determination to complete the installation.
 
-### Thursday, February 4, 2021 - City Inspection Complete
+### Thursday, February 4, 2021 - City Inspection Complete, Invoice Received
 
 Tesla texted yesterday to schedule the city inspection and as luck would have it, there was an opening for today.  The inspector arrived at 9:30 and green-tagged the installation!  Now to wait for the APS inspection and Permission To Operate (PTO).
+
+I've also received and paid the $38,000 invoice.  Unfortunately Tesla no longer accepts credit cards over the phone, you can only link a bank account online to pay (damn, no Credit Card points/rewards).
