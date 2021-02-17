@@ -96,3 +96,7 @@ A side note on the Solar and Powerwall teams - these guys were fantastic.  They 
 Tesla texted yesterday to schedule the city inspection and as luck would have it, there was an opening for today.  The inspector arrived at 9:30 and green-tagged the installation!  Now to wait for the APS inspection and Permission To Operate (PTO).
 
 I've also received and paid the $38,000 invoice.  Unfortunately Tesla no longer accepts credit cards over the phone, you can only link a bank account online to pay (damn, no Credit Card points/rewards).
+
+### Wednesday, February 10, 2021 - Utility Inspection - First Attempt
+
+APS paid a visit today to inspect and hopefully provide PTO.  Unfortunately, it was a no-go.  The disconnects on either side of the bi-directional meter for the batteries were not labeled 1/2 and 2/2 per the design plans, so they were unable to approve.  They've sent information back to Tesla for remediation.
