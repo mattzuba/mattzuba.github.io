@@ -1,7 +1,6 @@
 ---
 tags: [postfix, microsoft 365, ubuntu, fuglu, certbot]
 ---
-{:n: target="_blank"}
 
 If you're a larger organization running Microsoft 365 with Exchange Online, you probably have a need for applications, multifunction devices like printers or other devices that need to connect to an SMTP server to send email to your organization or others outside your organization.  Using an SMTP relay, Microsoft 365 can relay emails on your behalf by using a connector that's configured with your public IP address or a TLS certificate.
 
@@ -563,3 +562,5 @@ Additionally, if Postfix shows that the emails have left the box, you can check 
 Now that you have a fully functioning connector, all you need to do is update any devices that need to send through Exchange to use your new Postfix server.  It's recommended to point them to port 587 and use TLS where you can.  Otherwise, you can use port 587 without TLS, or port 25 if your client doesn't support 587.  No authentication is necessary as well.
 
 In short, we walked through installing Postfix with Fuglu for antivirus scanning, DKIM signing and archiving and connected it to Microsoft 365 in a way that allows us to send emails from <anything>@yourdomain.com, to any recipient, and have Exchange Online treat it as an internal message.  I hope this has helped you configure things or helped you solve an issue in your implementation.  Comment below and let me know!
+
+{:n: target="_blank"}
