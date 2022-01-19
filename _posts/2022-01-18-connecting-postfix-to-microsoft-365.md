@@ -216,6 +216,7 @@ Install Certbot via snap:
 $ snap install --classic certbot
 $ snap set certbot trust-plugin-with-root=ok
 $ snap install certbot-dns-route53
+$ ln -s /snap/bin/certbot /usr/bin/certbot
 ```
 
 ## Configuration
