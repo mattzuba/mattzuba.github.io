@@ -3,7 +3,7 @@ tags: [postfix, microsoft 365, ubuntu, fuglu, certbot]
 ---
 {:n: target="_blank"}
 
-If you're a larger organization running Microsoft 365 with Exchange Online, you probably have a need for applications, multifunction devices like printers or other devices that need to connect to an SMTP server to send email to your organization or others outside of your organization.  An SMTP relay lets Microsoft 365 relay emails on your behalf by using a connector that's configured with your public IP address or a TLS certificate.
+If you're a larger organization running Microsoft 365 with Exchange Online, you probably have a need for applications, multifunction devices like printers or other devices that need to connect to an SMTP server to send email to your organization or others outside your organization.  Using an SMTP relay, Microsoft 365 can relay emails on your behalf by using a connector that's configured with your public IP address or a TLS certificate.
 
 This article will discuss configuring [Postfix](http://www.postfix.org/){:n} on Ubuntu 18.04 as an internal Smarthost to relay mail to your Microsoft 365 tenant.  We'll leverage Fuglu as an advanced content filter and Certbot for security.  I'll also share a small trick I found to ensure that Microsoft 365 sees all of your Postfix emails as internal emails, rather than anonymous/external.
 
@@ -17,22 +17,22 @@ For the remainder of this post, I'll assume that you're creating a dedicated Pos
 
 # Server Specs
 
-Our relay at [Goodwill of Central and Northern Arizona](https://goodwillaz.org){:n} passes close to 1 million emails/year to Microsoft 365, totalling almost 250GB.  While that may seem like a lot, in the grand scheme of things it breaks down to roughly 5 emails/minute during operating hours.  It handles emails from internal applications (web and desktop), voicemail email notifications (with transcribing via Google's Speech to Text api), scan-to-email MFPs, and other devices that send email within the organization.  What once started as a short term solution to allowing a few MFPs to scan-to-email almost 10 years ago has turned into a critical part of our infrastructure.
+The relay at my company passes close to 1 million emails/year to Microsoft 365, totalling almost 250 GB in size.  That breaks down to roughly 5 emails/minute during operating hours.  It handles emails from internal applications (web and desktop), voicemail email notifications (with transcribing via Google's Speech to Text api), scan-to-email MFPs, network monitoring applications and other devices that send email within the organization.  What once started as a short term solution to allowing a few MFPs to scan-to-email over 10 years ago has turned into a critical part of our infrastructure.
 
-We run two SMTP relays that both connect to Microsoft 365 (with the same connectors); one at each of our datacenters.  They have the following specs:
+We run two SMTP relays that both connect to Microsoft 365 (with the same connector); one at each of our datacenters.  They have the following specs:
 
 * 2 vCPUs
-* 4GB RAM
-* 40GB Primary HDD (for OS)
-* 100GB Secondary HDD (for archiving)
+* 4 GB RAM
+* 40 GB Primary HDD (for OS)
+* 100 GB Secondary HDD (for archiving)
 
 # Fuglu
 
-First we're going to install [Fuglu](https://fuglu.org/){:n}.  Fuglu is an advanced content scanner that can do all sorts of things such as archiving email, DKIM signing, spam / antivirus scanning and more!  You can even write your own Python plugins to create your own scanner/filter (we've leveraged this to send our Voicemails through Google's Speech-to-text engine to transcribe them).
+First we're going to install [Fuglu](https://fuglu.org/){:n}.  Fuglu is an advanced content scanner that can do all sorts of things such as archiving email, DKIM signing, spam / antivirus scanning and more!  You can even write your own Python plugins to create your own scanner/filter (we've leveraged this to send voicemails through Google's Speech-to-text engine to transcribe them).
 
 ## Installation
 
-There are many ways to install Fuglu; since this is a single purpose machine, I've installed Fuglu as a `deb` package that I created using their gitlab repo.  There is already a script in their repo to assist with this, but I made some changes to it to work properly on Python 3.  You can run these steps on the machine itself, or you can leverage Docker to create the `deb` file in an isolated environment.  I opted for the latter route.  I have Docker installed on my laptop, so I created the `deb` there and then moved it to the server to install.
+There are many ways to install Fuglu; since this is a single purpose machine, I've installed Fuglu as a `deb` package that I created using their Gitlab repo.  There is already a script in their repo to assist with this, but I made some changes to it to work properly on Python 3.  You can run these steps on the machine itself, or you can leverage Docker to create the `deb` file in an isolated environment.  I opted for the latter route.  I have Docker installed on my laptop, so I created the `deb` there and then moved it to the server to install.
 
 >Dockerfile
 {:.file-name}
@@ -148,6 +148,17 @@ archivedir=/var/lib/fuglu/archive
 subdirtemplate=${date}
 ```
 
+If you wish to retain only X days of archives, you'll need to create a small cron script to handle clearing out older emails.  Create the following file, adjust the 90 to whatever works for you and the space you have available and make it executable.
+
+>/etc/cron.daily/clear-archived-mail
+{:.file-name}
+```bash
+#!/bin/sh
+
+# Delete all mail files in /var/lib/fuglu/archive created more than 90 days ago
+find /var/lib/fuglu/archive -type f -ctime +90 -delete
+```
+
 >/etc/fuglu/conf.d/dkimsign.conf
 {:.file-name}
 ```ini
@@ -171,17 +182,6 @@ signheaders=
 signbodylength=False
 ```
 
-If you wish to retain only X days of archives, you'll need to create a small cron script to handle clearing out older emails.  Create the following file, make it executable and adjust the 90 to whatever works for you and the space you have available.
-
->/etc/cron.daily/clear-archived-mail
-{:.file-name}
-```bash
-#!/bin/sh
-
-# Delete all mail files in /var/lib/fuglu/archive created more than 90 days ago
-find /var/lib/fuglu/archive -type f -ctime +90 -delete
-```
-
 Now create the DKIM key and get it added to DNS (replace yourdomain.com with your domain):
 
 ```bash
@@ -191,7 +191,7 @@ $ sudo -u fuglu openssl genrsa -out "/etc/fuglu/dkim/yourdomain.com.key" 2048
 $ echo -n "postfix._domainkey TXT  \"v=DKIM1; k=rsa; p=" ; openssl rsa -in "/etc/fuglu/dkim/yourdomain.com.key" -pubout -outform PEM 2>/dev/null | grep -v 'PUBLIC KEY' | tr -d '\n' ; echo ";\""
 ```
 
-Use the output of the echo statement above to create your DNS record.  Every service provider is different so I won't begin to enumerate them here.  Review the documentation of your DNS provider if you need assistance creating a TXT record.  To verify the TXT record is created properly, you should be able to `dig` the domain key and verify the output:
+Use the output of the echo statement above to create your DNS record.  Every service provider is different, so I won't begin to enumerate them here.  Review the documentation of your DNS provider if you need assistance creating a TXT record.  To verify the TXT record is created properly, you should be able to `dig` the domain key and verify the output:
 
 ```bash
 $ dig postfix._domainkey.yourdomain.com TXT +short
@@ -210,18 +210,19 @@ If you're not familiar with [Certbot](https://certbot.eff.org/){:n}, it's a fant
 
 ## Installation
 
-Install Certbot by adding the PPA to your system and installing the application and any applicable libraries:
+Install Certbot via snap:
 
 ```bash
-$ add-apt-repository -y ppa:certbot/certbot
-$ apt install -y certbot python3-certbot-dns-route53
+$ snap install --classic certbot
+$ snap set certbot trust-plugin-with-root=ok
+$ snap install certbot-dns-route53
 ```
 
 ## Configuration
 
 ### Route53
 
-If you're using Route53, you'll need to add an access/secret key for an IAM user that has permission to create DNS entries in the zone you'll be creating certificates for.  A simple IAM policy like this will work:
+We use Route53 for DNS, so I'll at least explain the necessary setup for that.  You'll need to add an access/secret key for an IAM user that has permission to create DNS entries in the zone you'll be creating certificates for.  A simple IAM policy like this will work:
 
 ```json
 {
@@ -256,8 +257,8 @@ EOT
 $ chmod 600 /etc/letsencrypt/aws.credentials
 
 # Override the systemd service file 
-$ mkdir -p /etc/systemd/system/certbot.service.d
-$ cat <<EOT > /etc/systemd/system/certbot.service.d/override.conf
+$ mkdir -p /etc/systemd/system/snap.certbot.renew.service.d
+$ cat <<EOT > /etc/systemd/system/snap.certbot.renew.service.d/override.conf
 [Service]
 Environment="AWS_CONFIG_FILE=/etc/letsencrypt/aws.credentials"
 EOT
@@ -440,7 +441,7 @@ smtp_tls_key_file = /etc/letsencrypt/live/smtp.yourdomain.com/privkey.pem
 smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
 ```
 
-`master.cf` also needs a few tweaks in order to work properly as well.  The first line below will enable the submission port (587), the second adds fuglu connectors in Postfix.  Note that this does differ a bit from the official Fuglu configuration documentation, but I found this config to work better.
+`master.cf` also needs a few tweaks in order to work properly as well.  The first line below will enable the submission port (587), the second adds fuglu connectors in Postfix.  Note that this does differ a bit from the official Fuglu configuration documentation, but I found this config to work well.
 
 ```bash
 $ sed -i 's/^#submission/submission/g' /etc/postfix/master.cf
@@ -470,13 +471,13 @@ $ systemctl reload postfix
 
 # Connecting to Microsoft 365
 
-Now that everything on our server is complete, it's time to setup our connection to Microsoft 365.  We will be loosely following [Microsoft's inbound and outbound connectors](https://docs.microsoft.com/en-us/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365#option-3-configure-a-connector-to-send-mail-using-microsoft-365-or-office-365-smtp-relay){:n} documentation.
+Now that everything on our server is complete, it's time to set up our connection to Microsoft 365.  We will be loosely following [Microsoft's inbound and outbound connectors](https://docs.microsoft.com/en-us/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365#option-3-configure-a-connector-to-send-mail-using-microsoft-365-or-office-365-smtp-relay){:n} documentation.
 
 > SMTP relay lets Microsoft 365 or Office 365 relay emails on your behalf by using a connector that's configured with your public IP address or a TLS certificate. 
 
 The advantage of this option for us was simple:
 * We needed email to come _FROM_ any potential address on our domain, not a particular account (eliminates option 1)
-* We needed to send email outside of the organization (eliminates option 2)
+* We needed to send email outside the organization (eliminates option 2)
 
 ## Inbound Connector
 
@@ -495,21 +496,29 @@ The inbound connector allows our Postfix server to send emails through Exchange 
     c. Enter the common name of the certificate you created above in the box under the first option as shown below and click **Next**:
     ![Inbound Connector - Step 2c](/images/inbound-connector-step-2c.png)
     
-    d. Review everything to ensure it's setup correctly and click the **Create connector** button.
+    d. Review everything to ensure its setup correctly and click the **Create connector** button.
     
-3. Now that you are done with configuring your Microsoft 365 settings, go to your domain registrar's website to update your DNS records. Edit your SPF record to include the public IP address that your email will come from.  You cannot use dynamic IP addresses here, you must have a static address.  Consult with your network team to either assign a static WAN address to your Postfix server or utilize your existing WAN IP.  You can run `curl -s icanhazip.com` to find your IP address if needed.  The finished string should look similar to this `v=spf1 ip4:10.5.3.2 include:spf.protection.outlook.com ~all`, where `10.5.3.2` is your public IP address. Skipping this step can cause email to be sent to recipients' junk mail folders.
+3. Now that you are done with configuring your Microsoft 365 settings, go to your domain registrar's website to update your DNS records. Edit your SPF record to include the public IP address that your email will come from.  You cannot use dynamic IP addresses here, you must have a static address.  Consult with your network team to either assign a static WAN address to your Postfix server or utilize your existing WAN IP.  You can run `curl -s icanhazip.com` to find your IP address of your Postfix server if needed.  The finished string should look similar to this `v=spf1 ip4:8.8.8.8 include:spf.protection.outlook.com ~all`, where `8.8.8.8` is your public IP address. Skipping this step can cause email to be sent to recipients' junk mail folders.
 
 At this point you should now have a fully functioning mail flow.  There are two ways you can/should test.  First is via telnet for non-TLS-based connections, the second is via openssl for TLS-based.
 
-### Testing the complete process
+# Testing the complete process
 
-First we'll use good ol' telnet (lines prefixed with `>>` you should manually enter, without the `>>`):
+To connect via telnet, use something similar to the following:
+
+```bash
+$ telnet smtp.yourdomain.com 587
+```
+
+For testing STARTTLS, use `openssl` like so:
+
+```bash
+$ openssl s_client -connect smtp.yourdomain.com:587 -starttls smtp
+```
+
+Once connected, you can start issuing commands (lines prefixed with `>>` you should manually enter, without the `>>`, this applies to both telnet and openssl):
 
 ```bash 
-$ telnet smtp.yourdomain.com 587
-Trying 10.1.1.1...
-Connected to smtp.yourdomain.com.
-Escape character is '^]'.
 220 smtp.yourdomain.com ESMTP Postfix
 >> EHLO smtp.yourdomain.com
 250-smtp.yourdomain.com
@@ -522,11 +531,11 @@ Escape character is '^]'.
 250-8BITMIME
 250-DSN
 250 SMTPUTF8
->> MAIL FROM: no-reply@yourdomain.com
+>> mail from: no-reply@yourdomain.com
 250 2.1.0 Ok
->> RCPT TO: you@yourdomain.com
+>> rcpt to: you@yourdomain.com
 250 2.1.5 Ok
->> DATA
+>> data
 354 End data with <CR><LF>.<CR><LF>
 >> To: you@yourdomain.com
 >> From: no-reply@yourdomain.com
@@ -539,3 +548,17 @@ Escape character is '^]'.
 221 2.0.0 Bye
 Connection closed by foreign host.
 ```
+
+If everything goes well, you'll end up with some emails in your inbox to validate your test.  If they don't go through, you'll need to start digging through logs.  Some meaningful logs on the Postfix server include:
+
+* /var/mail.log
+* /var/mail.err
+* /var/log/fuglu/fuglu.log
+
+Additionally, if Postfix shows that the emails have left the box, you can check Message Trace on the Exchange Admin portal.
+
+# Wrapping up
+
+Now that you have a fully functioning connector, all you need to do is update any devices that need to send through Exchange to use your new Postfix server.  It's recommended to point them to port 587 and use TLS where you can.  Otherwise, you can use port 587 without TLS, or port 25 if your client doesn't support 587.  No authentication is necessary as well.
+
+In short, we walked through installing Postfix with Fuglu for antivirus scanning, DKIM signing and archiving and connected it to Microsoft 365 in a way that allows us to send emails from <anything>@yourdomain.com, to any recipient, and have Exchange Online treat it as an internal message.  I hope this has helped you configure things or helped you solve an issue in your implementation.  Comment below and let me know!
